@@ -1,0 +1,104 @@
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <form *ngIf="typeModal === 'signUp'">
+  <div class="modal-header">
+    <h4 class="modal-title">{{ 'modal.titleSignUp' | translate }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+  <div class="col-sm-12 col-sm-offset-2">
+
+    <div class="form-group">
+      <label for="name">
+        User Name
+      </label>
+      <input type="text" id="nametext" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">
+        Email
+      </label>
+      <input type="text" id="namelabel" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">
+        Password
+      </label>
+      <input type="password" id="namepassword" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">
+        Confirm Password
+      </label>
+      <input type="password" id="nameconfirm" class="form-control">
+    </div>
+      <!-- <div class="form-group">
+        <label for="status">
+          État de l'appareil
+        </label>
+        <select id="status" class="form-control">
+          <option value="carRobot">Car Robot</option>
+          <option value="Humanoid">Humanoid</option>
+        </select>
+      </div> -->
+      <hr style="padding-top: 15px;">
+      <div class="form-group">
+        <button type="button" class="btn btn-outline-danger socialLogin"><i class="fa fa-google"></i> Google</button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-outline-dark socialLogin"><i class="fa fa-github"></i> Github</button>
+      </div>
+  </div>
+</div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success" type="submit">Save</button>
+    <button type="button" class="btn btn-outline-danger" (click)="c('Close click')">Close</button>
+  </div>
+  </form>
+
+  <form *ngIf="typeModal === 'signIn'">
+  <div class="modal-header">
+    <h4 class="modal-title">{{ 'modal.titleSignIn' | translate }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+  <div class="col-sm-12 col-sm-offset-2">
+    <div class="form-group">
+      <label for="name">
+        Email
+      </label>
+      <input type="text" id="name2" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">
+        Password
+      </label>
+      <input type="password" id="name1" class="form-control">
+    </div>
+    <hr style="padding-top: 15px;">
+    <div class="form-group">
+      <button type="button" class="btn btn-outline-danger socialLogin"><i class="fa fa-google"></i> Google</button>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-outline-dark socialLogin"><i class="fa fa-github"></i> Github</button>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-success" type="submit">Connect</button>
+    <button type="button" class="btn btn-outline-danger" (click)="c('Close click')">Close</button>
+  </div>
+  </form>
+
+
+</ng-template>
+
+<button class="btn btn-outline-info" (click)="open(content)">{{_titleButton}}</button>

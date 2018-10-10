@@ -16,6 +16,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { LanguageComponent } from './language/language.component';
+import { CartShoppingComponent } from './cart-shopping/cart-shopping.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { BookComponent } from './book/book.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const appRoutes: Routes = [
     // {path: 'navbar', component: NavbarComponent},
@@ -32,7 +37,12 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
     NavbarRightComponent,
     ModalComponent,
     UserInfoComponent,
-    LanguageComponent
+    LanguageComponent,
+    CartShoppingComponent,
+    CarouselComponent,
+    BookComponent,
+    BookListComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

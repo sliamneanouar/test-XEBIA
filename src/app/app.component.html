@@ -1,7 +1,25 @@
-<div class="backgroungImage">
+<div class="backgroungImage" style="padding: 10px;">
 <navbar></navbar>
-<div class=""  style="">
-
-</div>
+<nav class="navbar navbar-inverse" style="background-color: #e5e2e21f;">
+  <div class="container-fluid">
+    <div class="navbar-form navbar-right">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" style="border-radius: 0; border: 0;">
+        <div class="input-group-btn" style="margin-left: -5px;">
+          <button class="btn btn-default" style="border-radius: 0; border: 0; height: 100%; background-color: white;">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-form navbar-left">
+      <app-cart-shopping></app-cart-shopping>
+    </div>
+  </div>
+</nav>
+<!-- <div style="width:100%; text-align: center !important; height: 30% !important;">
+<app-carousel></app-carousel>
+</div> -->
+<app-book-list></app-book-list>
 <router-outlet></router-outlet>
 </div>

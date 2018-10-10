@@ -9,7 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class LanguageComponent implements OnInit {
 public languageFlag: string = "France";
 public languageName: string = "FR";
-  public translate: TranslateService;
+
   constructor(private translate: TranslateService) {
     console.log("translate ::: ", translate);
       translate.setDefaultLang('en');

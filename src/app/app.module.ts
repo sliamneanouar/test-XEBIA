@@ -3,24 +3,20 @@ import { NgModule, Injectable, Component, OnInit, ModuleWithProviders } from '@a
 import { AlertModule } from 'ngx-bootstrap';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import {Router, Routes, RouterModule} from '@angular/router';
-import { NevbarLeftComponent } from './Navbar/nevbar-left/nevbar-left.component';
-import { NavbarRightComponent } from './Navbar/navbar-right/navbar-right.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './components/modal/modal.component';
 // import ngx-translate and the http loader
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { LanguageComponent } from './language/language.component';
-import { CartShoppingComponent } from './cart-shopping/cart-shopping.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { BookComponent } from './book/book.component';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { LanguageComponent } from './components/language/language.component';
+import { CartShoppingComponent } from './components/cart-shopping/cart-shopping.component';
+import { BookComponent } from './components/book/book.component';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 const appRoutes: Routes = [
     // {path: 'navbar', component: NavbarComponent},
@@ -32,14 +28,10 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    NevbarLeftComponent,
-    NavbarRightComponent,
     ModalComponent,
     UserInfoComponent,
     LanguageComponent,
     CartShoppingComponent,
-    CarouselComponent,
     BookComponent,
     BookListComponent,
     BookDetailComponent

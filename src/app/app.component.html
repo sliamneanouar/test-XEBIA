@@ -1,6 +1,8 @@
 <div class="backgroungImage" style="padding: 10px;">
-<navbar></navbar>
-<nav class="navbar navbar-inverse" style="background-color: #e5e2e21f;">
+<nav class="navbar navbar-inverse" style="background-color: #e5e2e21f;    padding-top: 0rem;
+    padding-right: 1rem;
+    padding-bottom: 0rem;
+    padding-left: 1rem;">
   <div class="container-fluid">
     <div class="navbar-form navbar-right">
       <div class="input-group">
@@ -13,13 +15,19 @@
       </div>
     </div>
     <div class="navbar-form navbar-left">
+      <div class="input-group">
+      <app-language></app-language>
       <app-cart-shopping></app-cart-shopping>
+    </div>
     </div>
   </div>
 </nav>
 <!-- <div style="width:100%; text-align: center !important; height: 30% !important;">
 <app-carousel></app-carousel>
 </div> -->
+
+
+<router-outlet>
 <app-book-list></app-book-list>
-<router-outlet></router-outlet>
+</router-outlet>
 </div>

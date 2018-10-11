@@ -1,0 +1,13 @@
+<ngb-rating [rate]="_note" placement="right" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+popoverTitle="Popover on top">
+  <ng-template let-fill="fill" let-index="index">
+    <span class="star" [class.filled]="fill === 100" [class.bad]="index < _note">&#9733;</span>
+  </ng-template>
+</ngb-rating>
+<div class="priceSale">{{_price}} &euro;</div>
+<div class="paddingButtonSale">
+  <button type="button" class="btn btn-info">
+    <i class="fa fa-shopping-cart"></i>
+    Ajouter au panier
+  </button>
+</div>

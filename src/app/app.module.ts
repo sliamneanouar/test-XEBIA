@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, Component, OnInit, ModuleWithProviders } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { CommonModule } from '@angular/common';
-import { AppComponent } from './app.component';
+import { Home } from './pages/page.home';
 import {Router, Routes, RouterModule} from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
@@ -17,24 +17,34 @@ import { CartShoppingComponent } from './components/cart-shopping/cart-shopping.
 import { BookComponent } from './components/book/book.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { ShoppingComponent } from './pages/shopping/shopping.component';
+import { BooksComponent } from './pages/books/books.component';
+import { ImageComponent } from './components/image/image.component';
+import { InfoSectionComponent } from './components/info-section/info-section.component';
+import { SaleSectionComponent } from './components/sale-section/sale-section.component';
 
 const appRoutes: Routes = [
-    // {path: 'navbar', component: NavbarComponent},
-    // {path: '', component: AppComponent}
+    {path: 'shopping', component: ShoppingComponent},
+    {path: '', component: BooksComponent}
 ];
 const appRoutingProviders: any[] = [];
 const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });
 
 @NgModule({
   declarations: [
-    AppComponent,
+    Home,
     ModalComponent,
     UserInfoComponent,
     LanguageComponent,
     CartShoppingComponent,
     BookComponent,
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    ShoppingComponent,
+    BooksComponent,
+    ImageComponent,
+    InfoSectionComponent,
+    SaleSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,7 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
         })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [Home]
 })
 export class AppModule { }
 // required for AOT compilation

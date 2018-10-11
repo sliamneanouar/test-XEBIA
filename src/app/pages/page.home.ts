@@ -4,10 +4,10 @@ import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  templateUrl: './page.home.html',
+  styleUrls: ['./page.home.less']
 })
-export class AppComponent {
+export class Home {
   title = 'app';
   counter: number;
 

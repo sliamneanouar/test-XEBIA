@@ -1,35 +1,25 @@
-
-
-      <div  style="padding: 10px; background-color: white;">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-right: auto; margin-left: auto; text-align: center;">
-          <img src="http://henri-potier.xebia.fr/hp0.jpg" class="img-responsive" style="box-shadow: 0 0 20px #135b9e, inset 0 0 20px 0px #135b9e;width:100%; max-width: 150px !important; height:100%; max-height: 200px !important;" alt="Image">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 15px;">
-          <span style="font-weight: bold; font-size: 20px;">Henri Potier à l'école des sorciers</span>
-          <div style="padding-top: 15px;">
-            <span>Henri Potier</span>
-          </div>
-          <div style="border: solid 1px #f4e6e6; margin-top: 15px">
-            <span style="padding: 5px;">
-              Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily)
-              ...<button type="button" class="btn btn-link">suit</button>
-            </span>
-          </div>
-
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-12" style="padding:5px; text-align: center;">
-          <ngb-rating [rate]="3" placement="right" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-          popoverTitle="Popover on top">
-            <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
-            </ng-template>
-          </ngb-rating>
-          <div style="font-weight: bold; font-size: 24px; color: red;">50,00 &euro;</div>
-          <div style="padding-top: 5px;">
-            <button type="button" class="btn btn-info" style="border-radius: 0px;">
-              <i class="fa fa-shopping-cart"></i>
-              Ajouter au panier
-            </button>
-          </div>
-        </div>
-      </div>
+<div  class="bookContent">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageContent">
+    <app-image
+      [imageURL]="'http://henri-potier.xebia.fr/hp0.jpg'"
+      [maxWidth]="150"
+      [maxheight]="200"
+      [displayShadow]="true" >
+    </app-image>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infoContent">
+    <app-info-section
+      [title]="'Henri Potier à l école des sorciers'"
+      [actor]="'Henri Potier'"
+      [discription]="['Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily)']">
+    </app-info-section>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-12 saleContent">
+    <app-sale-section
+    [price]="50"
+    [note]="4"
+    [inCart]="false"
+    >
+  </app-sale-section>
+  </div>
+</div>

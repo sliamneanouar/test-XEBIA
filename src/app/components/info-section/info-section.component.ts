@@ -9,6 +9,9 @@ export class InfoSectionComponent implements OnInit {
   public _title: string = "";
   public _actor: string = "";
   public _discription: string = "";
+  public discriptionDetail: any = [];
+  public _bookData: any = {};
+  public _modalDisplay: boolean = false;
 
   @Input()
    public set title(value: string) {
@@ -21,6 +24,30 @@ export class InfoSectionComponent implements OnInit {
    public get title(): string {
        return this._title;
    };
+
+   @Input()
+    public set modalDisplay(value: boolean) {
+        if (value === null || value === undefined) {
+            return;
+        }
+        this._modalDisplay = value;
+    };
+
+    public get modalDisplay(): boolean {
+        return this._modalDisplay;
+    };
+
+   @Input()
+     public set bookData(value: any) {
+       if (value === null || value === undefined) {
+            return;
+       }
+         this._bookData = value;
+     };
+
+     public get bookData(): any {
+         return this._bookData;
+     };
 
    @Input()
     public set actor(value: string) {
@@ -39,7 +66,7 @@ export class InfoSectionComponent implements OnInit {
          if (value === null || value === undefined || value === "") {
              return;
          }
-         console.log("value ::: ", value);
+         this.discriptionDetail = value;
          this._discription = value[0].substring(0, 100);
      };
 

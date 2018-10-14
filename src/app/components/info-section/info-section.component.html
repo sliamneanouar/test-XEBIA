@@ -1,14 +1,18 @@
-<span class="infoTitle">
+
+<div class="infoTitle" *ngIf="_title !== null && _title !== undefined">
   {{ _title }}
-</span>
-<div class="infoActor">
+</div>
+<div class="infoActor" *ngIf="_actor !== null && _actor !== undefined">
   <span>
-    {{ actor }}
+    {{ _actor }}
   </span>
 </div>
 <div class="infoDiscription">
-    <p class="pDiscription">
-      {{ discription }}
-      ...<button type="button" class="btn btn-link">suit</button>
-    </p>
+  <p class="pDiscription" *ngIf="_modalDisplay">
+    {{ discription }}
+    ...<app-modal [bookData]="_bookData" [titleButton]="'suit'" [titleModal]="_title"></app-modal>
+  </p>
+  <p class="pDiscriptionDetail" *ngIf="!_modalDisplay">
+    {{ discriptionDetail }}
+  </p>
 </div>

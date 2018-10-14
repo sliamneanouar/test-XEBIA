@@ -24,6 +24,7 @@ import { ImageComponent } from './components/image/image.component';
 import { InfoSectionComponent } from './components/info-section/info-section.component';
 import { SaleSectionComponent } from './components/sale-section/sale-section.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import { SaleDetailComponent } from './components/sale-detail/sale-detail.component';
 
 const appRoutes: Routes = [
     {path: 'shopping', component: ShoppingComponent},
@@ -47,7 +48,8 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
     ImageComponent,
     InfoSectionComponent,
     SaleSectionComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    SaleDetailComponent
   ],
   imports: [
     BrowserModule,

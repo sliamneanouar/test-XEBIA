@@ -1,0 +1,25 @@
+<div class="row saleDetailContent">
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <app-image
+      [imageURL]="'../../../assets/images/background-robot.png'"
+      [maxWidth]="50"
+      [maxheight]="50"
+      [displayShadow]="true" >
+    </app-image>
+  </div>
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <ngb-rating [rate]="4" placement="right" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+        popoverTitle="Popover on top">
+          <ng-template let-fill="fill" let-index="index">
+            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 4">&#9733;</span>
+          </ng-template>
+        </ngb-rating>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <span> User comment </span>
+      </div>
+  </div>
+</div>
+</div>

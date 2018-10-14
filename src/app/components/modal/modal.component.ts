@@ -12,6 +12,7 @@ export class ModalComponent  {
   public _titleButton: string = "open";
   public _titleModal: string = "";
   public _typeModal: string = "signUp";
+  public _bookData: any = {};
 
   @Input()
     public set typeModal(value: string) {
@@ -21,6 +22,16 @@ export class ModalComponent  {
     public get typeModal(): string {
         return this._typeModal;
     };
+
+    @Input()
+      public set bookData(value: any) {
+        console.log("bookData :: ", value);
+          this._bookData = value;
+      };
+
+      public get bookData(): any {
+          return this._bookData;
+      };
 
     @Input()
       public set titleButton(value: string) {

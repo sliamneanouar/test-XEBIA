@@ -1,3 +1,39 @@
-<div class="shopping-content">
-  <i class="fa fa-shopping-cart icon-shopping"> <span class="counter-shopping"> 1 </span> </i>
+<div ngbDropdown class="shopping-content">
+      <button class="cartButton" id="dropdownBasic1" ngbDropdownToggle>
+        <i class="fa fa-shopping-cart icon-shopping"> <span class="counter-shopping"> 1 </span> </i>
+      </button>
+
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <div class="dropdown-item" style="maxWidth: 100px !important;">
+          <app-image
+            [imageURL]="'http://henri-potier.xebia.fr/hp5.jpg'"
+            [maxWidth]="30"
+            [maxheight]="50"
+            [displayShadow]="true" >
+          </app-image>
+        <span>  Action - 1 </span>
+        </div>
+          <hr>
+          <div class="dropdown-item" style="maxWidth: 100px !important;">
+            <app-image
+              [imageURL]="'http://henri-potier.xebia.fr/hp0.jpg'"
+              [maxWidth]="30"
+              [maxheight]="50"
+              [displayShadow]="true" >
+            </app-image>
+          <span>  Action - 1 </span>
+          </div>
+            <hr>
+            <div class="dropdown-item" style="maxWidth: 100px !important;">
+              <app-image
+                [imageURL]="'http://henri-potier.xebia.fr/hp1.jpg'"
+                [maxWidth]="30"
+                [maxheight]="50"
+                [displayShadow]="true" >
+              </app-image>
+            <span>  Action - 1 </span>
+            </div>
+              <hr>
+              <button type="button" class="btn btn-success" [routerLink]="['shopping']">Panier</button>
+      </div>
 </div>

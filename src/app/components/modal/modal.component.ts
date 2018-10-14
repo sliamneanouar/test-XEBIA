@@ -43,7 +43,7 @@ export class ModalComponent  {
   constructor(private modalService: NgbModal) {}
 
   open(content) {
-    this.modalService.open(content,  { size: 'sm', centered: true });
+    this.modalService.open(content,  { size: 'lg', centered: true });
   }
 
 }

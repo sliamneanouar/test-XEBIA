@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Home } from './pages/page.home';
 import {Router, Routes, RouterModule} from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 import { ModalComponent } from './components/modal/modal.component';
 // import ngx-translate and the http loader
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -22,6 +23,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { ImageComponent } from './components/image/image.component';
 import { InfoSectionComponent } from './components/info-section/info-section.component';
 import { SaleSectionComponent } from './components/sale-section/sale-section.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
 const appRoutes: Routes = [
     {path: 'shopping', component: ShoppingComponent},
@@ -44,12 +46,15 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
     BooksComponent,
     ImageComponent,
     InfoSectionComponent,
-    SaleSectionComponent
+    SaleSectionComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     CommonModule,
+    HttpClientModule,
+    HttpModule,
     AlertModule.forRoot(),
     RouterModule.forRoot(appRoutes, { useHash: true }),
     NgbModule.forRoot(),

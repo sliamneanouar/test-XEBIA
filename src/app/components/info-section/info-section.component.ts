@@ -39,7 +39,8 @@ export class InfoSectionComponent implements OnInit {
          if (value === null || value === undefined || value === "") {
              return;
          }
-         this._discription = value;
+         console.log("value ::: ", value);
+         this._discription = value[0].substring(0, 100);
      };
 
      public get discription(): string {

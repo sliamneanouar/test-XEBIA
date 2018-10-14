@@ -3,38 +3,10 @@
 <h3 style="color: white;">List of books</h3>
 <br>
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
+  <div *ngFor="let book of listOfBooks; let i = index" class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
+    <app-book [bookData]="book"></app-book>
+    <hr>
   </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book></app-book>
-  </div>
-  <hr>
 </div>
 
 </div><br>

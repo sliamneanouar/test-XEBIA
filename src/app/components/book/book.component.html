@@ -1,7 +1,7 @@
 <div  class="bookContent">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageContent">
     <app-image
-      [imageURL]="'http://henri-potier.xebia.fr/hp0.jpg'"
+      [imageURL]="_bookData.cover"
       [maxWidth]="150"
       [maxheight]="200"
       [displayShadow]="true" >
@@ -9,17 +9,16 @@
   </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infoContent">
     <app-info-section
-      [title]="'Henri Potier à l école des sorciers'"
+      [title]="_bookData.title"
       [actor]="'Henri Potier'"
-      [discription]="['Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily)']">
+      [discription]="_bookData.synopsis">
     </app-info-section>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-3 col-lg-12 saleContent">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 saleContent">
     <app-sale-section
-    [price]="50"
+    [price]="_bookData.price"
     [note]="4"
-    [inCart]="false"
-    >
+    [inCart]="false">
   </app-sale-section>
   </div>
 </div>

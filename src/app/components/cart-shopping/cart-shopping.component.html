@@ -1,12 +1,12 @@
 <div ngbDropdown class="shopping-content">
       <button class="cartButton" id="dropdownBasic1" ngbDropdownToggle>
-        <i class="fa fa-shopping-cart icon-shopping"> <span class="counter-shopping"> {{ _cartList.length }} </span> </i>
+        <i class="fa fa-shopping-cart icon-shopping"> <span class="counter-shopping"> {{ global.getListCarte().length }} </span> </i>
       </button>
 
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <app-sale-detail  *ngFor="let item of _cartList"
-        [imageURL]="item.imageURL"
-        [text]="item.text">
+        <app-sale-detail  *ngFor="let item of global.getListCarte()"
+        [imageURL]="item.cover"
+        [text]="item.title">
       </app-sale-detail>
         <span> Total : <span style="text-decoration: line-through; color: grey;"> 150 </span> <span style="color: red;"> - 150 </span> </span>
         <hr>

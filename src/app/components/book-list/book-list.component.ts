@@ -42,7 +42,7 @@ export class BookListComponent implements OnInit {
     else {
       this._listBookInCart.splice(this.existBookInCart(book), 1);
     }
-    this.global.setRole('test55');
+    this.global.setListCarte(this._listBookInCart);
   }
 
   public existBookInCart(book: any): number {

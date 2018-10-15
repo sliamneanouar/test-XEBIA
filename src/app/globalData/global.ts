@@ -6,6 +6,7 @@ export class Global {
   static _listBooks: any = [];
   static _lsitBookInCart: any = [];
   static _searchValue: string = '';
+  static _listCarte: any = [];
 
   public static set role( value: string ) {
     Global._role = value;
@@ -20,6 +21,14 @@ export class Global {
 
   public getRole(): string {
      return Global._role;
+  }
+
+  public setListCarte(value: any) {
+    Global._listCarte = value;
+  }
+
+  public getListCarte(): any {
+     return Global._listCarte;
   }
 
   public setListBooks(value: any) {

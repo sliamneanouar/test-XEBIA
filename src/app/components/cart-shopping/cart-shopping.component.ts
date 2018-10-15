@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Global } from '../../globalData/global'
+
 @Component({
   selector: 'app-cart-shopping',
   templateUrl: './cart-shopping.component.html',
@@ -24,7 +26,7 @@ export class CartShoppingComponent implements OnInit {
     return this._cartList;
   }
 
-  constructor() { }
+  constructor(public global: Global) { }
 
   ngOnInit() {
   }

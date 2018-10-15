@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule, Injectable, Component, OnInit, ModuleWithProviders } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { CommonModule } from '@angular/common';
@@ -53,6 +54,7 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFontAwesomeModule,
     CommonModule,
     HttpClientModule,

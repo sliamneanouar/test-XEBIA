@@ -20,8 +20,9 @@
     <app-sale-section
     [price]="_bookData.price"
     [note]="4"
-    [inCart]="false"
-    [addBookCallBack]="addBookWithCallBack.bind(this)">
+    [inCart]="_inCart"
+    [addBookCallBack]="addBookWithCallBack.bind(this)"
+    [listBookInCart]="listBookInCart">
   </app-sale-section>
   </div>
 </div>

@@ -21,7 +21,7 @@
       <i class="fa fa-shopping-cart"></i>
       Ajouter au panier
     </button>
-    <button *ngIf="_inCart" type="button"
+    <button *ngIf="_inCart" type="button" (click)="addBookWithCallBack();"
     class="btn btn-warning" style="max-width: 200px; min-width: 200px; width: 200px;">
       <i class="fa fa-shopping-cart"></i>
       Retirer de panier

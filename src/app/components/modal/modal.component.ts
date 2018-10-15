@@ -25,7 +25,6 @@ export class ModalComponent  {
 
     @Input()
       public set bookData(value: any) {
-        console.log("bookData :: ", value);
           this._bookData = value;
       };
 

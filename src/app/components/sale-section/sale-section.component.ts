@@ -11,6 +11,7 @@ export class SaleSectionComponent implements OnInit {
   public _inCart: boolean;
   public _modalDisplay: boolean = false;
   public _addBookCallBack: any;
+  public _listBookInCart: any;
   // simulation de liste de feedback clients
   public _saleFeedBack: any = [
     {"note": 3.5, "text": "UserComment", "imageURL": "../../../assets/images/background-robot.png"},
@@ -54,6 +55,18 @@ export class SaleSectionComponent implements OnInit {
      public get inCart(): boolean {
          return this._inCart;
      };
+
+     @Input()
+      public set listBookInCart(value: any) {
+          if (value === null || value === undefined || value.length === 0) {
+              return;
+          }
+          this._listBookInCart = value;
+      };
+
+      public get listBookInCart(): any {
+          return this._listBookInCart;
+      };
 
      @Input()
       public set modalDisplay(value: boolean) {

@@ -21,7 +21,8 @@
           <app-sale-section
           [price]="_bookData.price"
           [note]="4"
-          [inCart]="false">
+          [inCart]="false"
+          [modalDisplay]="true">
         </app-sale-section>
         </div>
       </div>
@@ -35,4 +36,4 @@
 </div>
 </ng-template>
 
-<button class="btn btn-outline-info" (click)="open(content)">{{_titleButton}}</button>
+<button class="btn btn-link" (click)="open(content)">{{_titleButton}}</button>

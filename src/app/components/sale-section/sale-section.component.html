@@ -5,19 +5,26 @@
       <span class="star" [class.filled]="fill === 100" [class.bad]="index < _note">&#9733;</span>
     </ng-template>
   </ngb-rating>
-  <div style="border: solid 1px grey; padding: 3px;">
-    <app-sale-detail></app-sale-detail>
-    <hr>
-    <app-sale-detail></app-sale-detail>
-    <hr>
-    <app-sale-detail></app-sale-detail>
-    <hr>
+  <div class="scrollbar" id="style-6" *ngIf="_modalDisplay" style="border: solid 1px #8080801c; padding: 3px;">
+    <div class="force-overflow">
+      <app-sale-detail *ngFor="let item of _saleFeedBack"
+      [imageURL]="item.imageURL"
+      [text]="item.text"
+      [note]="item.note">
+    </app-sale-detail>
+    </div>
   </div>
   <div class="priceSale">{{_price}} &euro;</div>
   <div class="paddingButtonSale">
-    <button type="button" class="btn btn-info">
+    <button *ngIf="!_inCart" type="button" (click)="addBookWithCallBack();"
+     class="btn btn-info" style="max-width: 200px; min-width: 200px; width: 200px;">
       <i class="fa fa-shopping-cart"></i>
       Ajouter au panier
+    </button>
+    <button *ngIf="_inCart" type="button"
+    class="btn btn-warning" style="max-width: 200px; min-width: 200px; width: 200px;">
+      <i class="fa fa-shopping-cart"></i>
+      Retirer de panier
     </button>
   </div>
 </div>

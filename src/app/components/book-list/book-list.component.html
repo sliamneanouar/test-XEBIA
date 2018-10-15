@@ -4,7 +4,8 @@
 <br>
 <div class="row">
   <div *ngFor="let book of listOfBooks; let i = index" class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px;">
-    <app-book [bookData]="book"></app-book>
+    <app-book [bookData]="book"
+    [addBookCallBack]="addBookInList.bind(this)"></app-book>
     <hr>
   </div>
 </div>

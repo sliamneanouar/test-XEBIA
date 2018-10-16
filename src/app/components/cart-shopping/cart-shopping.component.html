@@ -22,7 +22,7 @@
           </span>
         </span>
         <hr>
-        <button type="button" class="btn btn-success" [routerLink]="['shopping']">
+        <button type="button" class="btn btn-success" [routerLink]="['/shopping']" [disabled]="global.getListCarte().length === 0">
           Panier
         </button>
       </div>

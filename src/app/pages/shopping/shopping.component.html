@@ -1,4 +1,12 @@
-
-  <h1>
-  shopping works!
-</h1>
+<div class="row shoppingContent">
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 shoppingLabel">
+    <div>
+         <p>Some text..</p>
+    </div>
+  </div>
+  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <app-book-detail *ngFor="let book of global.getListCarte()"
+      [bookData]="book">
+    </app-book-detail>
+  </div>
+</div>

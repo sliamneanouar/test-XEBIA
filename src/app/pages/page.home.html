@@ -5,7 +5,7 @@
     padding-left: 1rem;">
   <div class="container-fluid">
     <div class="navbar-form navbar-right">
-      <div class="input-group">
+      <div class="input-group" *ngIf="router.url === '/'">
         <input type="text" class="form-control" [(ngModel)]="searchValue"
          (input)="updateSearchValue($event.target.value)"
         placeholder="search" style="border-radius: 0; border: 0;">
@@ -19,7 +19,7 @@
     <div class="navbar-form navbar-left">
       <div class="input-group">
       <app-language></app-language>
-      <app-cart-shopping></app-cart-shopping>
+      <app-cart-shopping *ngIf="router.url === '/'"></app-cart-shopping>
     </div>
     </div>
   </div>

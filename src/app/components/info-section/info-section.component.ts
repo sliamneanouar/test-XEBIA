@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InfoSectionComponent implements OnInit {
   public _title: string = "";
   public _actor: string = "";
-  public _discription: string = "";
+  public _discription: string;
   public discriptionDetail: any = [];
   public _bookData: any = {};
   public _modalDisplay: boolean = false;

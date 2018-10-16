@@ -7,7 +7,7 @@
     {{ _actor }}
   </span>
 </div>
-<div class="infoDiscription">
+<div class="infoDiscription" *ngIf="discription !== null && discription !== undefined">
   <p class="pDiscription" *ngIf="_modalDisplay">
     {{ discription }}
     ...<app-modal [bookData]="_bookData" [titleButton]="'suit'" [titleModal]="_title"></app-modal>

@@ -1,3 +1,30 @@
-<p>
-  book-detail works!
-</p>
+<div  class="bookDeatilContent">
+  <div class="row">
+  <div class="col-lg-4">
+    <app-image
+      [imageURL]="_bookData.cover"
+      [maxWidth]="150"
+      [maxheight]="200"
+      [displayShadow]="true" >
+    </app-image>
+  </div>
+  <div class="col-lg-4">
+    <app-info-section
+      [title]="_bookData.title"
+      [actor]="'Henri Potier'"
+      [bookData]="_bookData"
+      [modalDisplay]="true">
+    </app-info-section>
+  </div>
+  <div class="col-lg-4">
+    <app-sale-section
+    [price]="_bookData.price"
+    [note]="4"
+    [inCart]="_inCart"
+    [addBookCallBack]="addBookWithCallBack.bind(this)"
+    [listBookInCart]="listBookInCart">
+  </app-sale-section>
+  </div>
+  </div>
+</div>
+<hr>

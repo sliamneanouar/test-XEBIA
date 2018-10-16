@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,7 +7,7 @@ import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./book.component.less'],
   providers: [NgbRatingConfig]
 })
-export class BookComponent implements OnInit {
+export class BookComponent {
   public _bookData: any = {};
   public _addBookCallBack: any;
   public _listBookInCart: any;
@@ -50,17 +50,13 @@ export class BookComponent implements OnInit {
     };
 
   constructor(config: NgbRatingConfig) {
-    // customize default values of ratings used by this component tree
     config.max = 5;
     config.readonly = true;
-  }
+  };
 
   public addBookWithCallBack() {
     if(this.addBookCallBack !== null && this.addBookCallBack !== undefined && typeof this.addBookCallBack === "function") {
       this.addBookCallBack(this.bookData);
-      console.log("this._listBookInCart ", this._listBookInCart);
-      console.log("this._listBookInCart ", this._listBookInCart);
-      console.log("this.existBookInCart(this._bookData) ",this.existBookInCart(this._bookData));
       if(this.existBookInCart(this._bookData) !== -1) {
         this._inCart = true;
       }
@@ -80,9 +76,5 @@ export class BookComponent implements OnInit {
       });
     }
     return index;
-  }
-
-  ngOnInit() {
-  }
-
+  };
 }

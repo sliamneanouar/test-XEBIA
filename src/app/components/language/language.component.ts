@@ -11,7 +11,6 @@ public languageFlag: string = "France";
 public languageName: string = "FR";
 
   constructor(private translate: TranslateService) {
-    console.log("translate ::: ", translate);
       translate.setDefaultLang('en');
     }
 

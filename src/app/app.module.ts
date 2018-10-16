@@ -13,7 +13,6 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { UserInfoComponent } from './components/user-info/user-info.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CartShoppingComponent } from './components/cart-shopping/cart-shopping.component';
 import { BookComponent } from './components/book/book.component';
@@ -38,7 +37,6 @@ const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: 
   declarations: [
     Home,
     ModalComponent,
-    UserInfoComponent,
     LanguageComponent,
     CartShoppingComponent,
     BookComponent,

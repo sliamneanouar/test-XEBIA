@@ -1,9 +1,13 @@
 import { Component, OnInit, Input  } from '@angular/core';
+import { Global } from '../../globalData/global'
 
 @Component({
   selector: 'app-sale-section',
   templateUrl: './sale-section.component.html',
-  styleUrls: ['./sale-section.component.less']
+  styleUrls: ['./sale-section.component.less'],
+  providers: [
+       Global
+   ]
 })
 export class SaleSectionComponent implements OnInit {
   public _price: number;
@@ -92,7 +96,7 @@ export class SaleSectionComponent implements OnInit {
            return this._addBookCallBack;
        };
 
-  constructor() { }
+  constructor(public global: Global) { }
 
   public addBookWithCallBack() {
     if (this.addBookCallBack !== null && this.addBookCallBack !== undefined && typeof this.addBookCallBack === "function") {

@@ -55,4 +55,13 @@ export class Global {
      return Global._searchValue;
   }
 
+  public inCart(book: any) {
+    this.getListCarte().forEach(function(itemBook, key) {
+      if(book.cover === itemBook.cover && book.title === itemBook.title) {
+        return true;
+      }
+    });
+    return false;
+  }
+
 }

@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
 import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import { Global } from '../../globalData/global';
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.less'],
-  providers: [NgbRatingConfig]
+  providers: [
+    NgbRatingConfig,
+    Global
+  ]
 })
 export class BookComponent {
   public _bookData: any = {};
@@ -19,6 +23,12 @@ export class BookComponent {
            return;
        }
        this._bookData = value;
+       if(this.existBookInCart(this._bookData) !== -1) {
+         this._inCart = true;
+       }
+       else {
+         this._inCart = false;
+       }
    };
 
    public get bookData(): any {
@@ -49,9 +59,10 @@ export class BookComponent {
         return this._addBookCallBack;
     };
 
-  constructor(config: NgbRatingConfig) {
+  constructor(config: NgbRatingConfig, public global: Global) {
     config.max = 5;
     config.readonly = true;
+
   };
 
   public addBookWithCallBack() {
@@ -68,8 +79,8 @@ export class BookComponent {
 
   public existBookInCart(book: any): number {
     var index = -1;
-    if(this._listBookInCart.length !== 0) {
-      this._listBookInCart.forEach(function(itemBook, key) {
+    if(this.global.getListCarte().length !== 0) {
+      this.global.getListCarte().forEach(function(itemBook, key) {
         if(book.cover === itemBook.cover && book.title === itemBook.title) {
           index = key;
         }

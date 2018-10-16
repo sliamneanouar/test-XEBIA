@@ -36,6 +36,7 @@ export class BookListComponent implements OnInit {
   constructor(protected _getBooksService: GetBooksService, public global: Global) {}
 
   public addBookInList(book: any) {
+    console.log("addBookInList");
     if(this.existBookInCart(book) === -1) {
       this._listBookInCart.push(book);
     }
@@ -43,6 +44,7 @@ export class BookListComponent implements OnInit {
       this._listBookInCart.splice(this.existBookInCart(book), 1);
     }
     this.global.setListCarte(this._listBookInCart);
+    console.log("addBookInList this.global.setListCarte : ", this.global.getListCarte());
   }
 
   public existBookInCart(book: any): number {

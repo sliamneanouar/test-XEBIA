@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
-import { GetBooksService } from "../../api/get-books.service";
+import { GetBooksService } from "../../api/getBooks/get-books.service";
 import { HttpModule } from '@angular/http';
 
 import { Global } from '../../globalData/global'

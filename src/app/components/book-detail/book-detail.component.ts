@@ -63,7 +63,6 @@ export class BookDetailComponent {
   constructor(config: NgbRatingConfig, public global: Global, public router: Router) {
     config.max = 5;
     config.readonly = true;
-    console.log("addBookWithCallBack bookDeatilContent ::: ", this.global.getListCarte());
   };
 
   public addBookWithCallBack() {

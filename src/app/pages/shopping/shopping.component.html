@@ -1,7 +1,30 @@
 <div class="row shoppingContent">
-  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 shoppingLabel">
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 shoppingLabel" style="text-align: center;">
+    <div style=" min-height: 250px;">
+    <div class="totalArticle">
+         <p>Total article : {{ global.getListCarte().length }} </p>
+    </div>
+    <div *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+    _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+    _commercialOffers.offers[2] !== undefined && _commercialOffers.offers[2] !== null">
+      {{_commercialOffers.offers[2].value}} &euro; de remboursement par {{_commercialOffers.offers[2].sliceValue}} &euro; d'achat;
+    </div>
     <div class="totalPrice">
-         <p>{{ getTotalPrice() }} &euro;</p>
+         <span *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+         _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null" style="text-decoration: line-through; color: grey; padding-right: 30px;">{{ getTotalPrice() }} &euro;</span>
+         <span *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+         _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null" style=" color: red;">{{ getTotalPrice() -  _commercialOffers.offers[1].value}} &euro;</span>
+         <span *ngIf="_commercialOffers === undefined || _commercialOffers === null ||
+         _commercialOffers.offers === undefined || _commercialOffers.offers === null ||
+         _commercialOffers.offers[1] === undefined || _commercialOffers.offers[1] === null" style=" color: red;">{{ getTotalPrice()}} &euro;</span>
+    </div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-info">
+        Payer
+      </button>
     </div>
   </div>
   <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">

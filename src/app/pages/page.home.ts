@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import {TranslateService} from '@ngx-translate/core';
-import { GetBooksService } from "../api/get-books.service";
+import { GetBooksService } from "../api/getBooks/get-books.service";
 import { HttpModule } from '@angular/http';
 import { Global } from '../globalData/global'
 

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class Global {
   static _role: string = 'test';
   static _listBooks: any = [];
+  static _commercialOffers: any = {};
   static _lsitBookInCart: any = [];
   static _searchValue: string = '';
   static _listCarte: any = [];
@@ -52,6 +53,14 @@ export class Global {
   }
 
   public getSearchValue(): string {
+     return Global._searchValue;
+  }
+
+  public setCommercialOffers(value: any) {
+    Global._searchValue = value;
+  }
+
+  public getCommercialOffers(): any {
      return Global._searchValue;
   }
 

@@ -1,29 +1,57 @@
 <div class="row shoppingContent">
   <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 shoppingLabel" style="text-align: center;">
-    <div style=" min-height: 250px;">
+    <div class="fixContent">
     <div class="totalArticle">
-         <p>Total article : {{ global.getListCarte().length }} </p>
+         <p>{{'shopping.totalArticl' | translate }} : {{ global.getListCarte().length }} </p>
     </div>
-    <div *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
-    _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
-    _commercialOffers.offers[2] !== undefined && _commercialOffers.offers[2] !== null">
-      {{_commercialOffers.offers[2].value}} &euro; de remboursement par {{_commercialOffers.offers[2].sliceValue}} &euro; d'achat;
-    </div>
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel title="{{'shopping.detailOffre' | translate}}">
+        <ng-template ngbPanelContent>
+
+          <div class="verticalPadding" *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+          _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+          _commercialOffers.offers[2] !== undefined && _commercialOffers.offers[2] !== null">
+            {{_commercialOffers.offers[2].value}} &euro;
+            {{'shopping.refundByPurchase' | translate }} {{_commercialOffers.offers[2].sliceValue}} &euro;
+            {{'shopping.purchase' | translate }}
+          </div>
+
+          <div class="verticalPadding" *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+          _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+          _commercialOffers.offers[0] !== undefined && _commercialOffers.offers[0] !== null">
+            {{'shopping.deduction' | translate }} {{_commercialOffers.offers[0].value}}%
+          </div>
+
+          <div class="verticalPadding" *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
+          _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
+          _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null">
+            {{'shopping.discount' | translate }} {{_commercialOffers.offers[1].value}} &euro;
+          </div>
+
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+
+
     <div class="totalPrice">
          <span *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
          _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
-         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null" style="text-decoration: line-through; color: grey; padding-right: 30px;">{{ getTotalPrice() }} &euro;</span>
+         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null"
+         class="textThrough">{{ getTotalPrice() }} &euro;</span>
          <span *ngIf="_commercialOffers !== undefined && _commercialOffers !== null &&
          _commercialOffers.offers !== undefined && _commercialOffers.offers !== null &&
-         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null" style=" color: red;">{{ getTotalPrice() -  _commercialOffers.offers[1].value}} &euro;</span>
+         _commercialOffers.offers[1] !== undefined && _commercialOffers.offers[1] !== null"
+         class="textRed">{{ getTotalPrice() -  _commercialOffers.offers[1].value}} &euro;</span>
          <span *ngIf="_commercialOffers === undefined || _commercialOffers === null ||
          _commercialOffers.offers === undefined || _commercialOffers.offers === null ||
-         _commercialOffers.offers[1] === undefined || _commercialOffers.offers[1] === null" style=" color: red;">{{ getTotalPrice()}} &euro;</span>
+         _commercialOffers.offers[1] === undefined || _commercialOffers.offers[1] === null"
+         class="textRed">{{ getTotalPrice()}} &euro;</span>
     </div>
     </div>
     <div>
       <button type="button" class="btn btn-info">
-        Payer
+        {{'shopping.pay' | translate }}
       </button>
     </div>
   </div>

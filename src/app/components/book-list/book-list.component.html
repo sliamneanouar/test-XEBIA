@@ -1,5 +1,5 @@
 <div class="container text-center">
-<h3 class="whiteText">Search Result : {{ listOfBooksSearchResult.length }} Books</h3>
+<h3 class="whiteText"> {{'bookList.searchResult' | translate}}  : {{ listOfBooksSearchResult.length }}  {{'bookList.books' | translate}} </h3>
 <div class="row" *ngIf="inSearchResult(global.getSearchValue()) && listOfBooksSearchResult.length > 0">
   <div *ngFor="let book of listOfBooksSearchResult; let i = index" class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
     <app-book
@@ -14,7 +14,7 @@
 <div *ngIf="listOfBooksSearchResult.length === 0" class="row noData">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <i class="fa fa-search iconNoData"></i>
-    <h1 class="text-center"> No data found </h1>
+    <h1 class="text-center"> {{'bookList.noDataFound' | translate}} </h1>
   </div>
 </div>
 

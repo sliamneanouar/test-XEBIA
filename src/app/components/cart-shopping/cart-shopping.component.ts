@@ -8,12 +8,7 @@ import { Global } from '../../globalData/global'
   styleUrls: ['./cart-shopping.component.less']
 })
 export class CartShoppingComponent implements OnInit {
-  public _cartList: any = [
-    {"note": 3.5, "text": "UserComment", "imageURL": "../../../assets/images/background-robot.png"},
-    {"note": 3.5, "text": "UserComment", "imageURL": "../../../assets/images/background-robot.png"},
-    {"note": 3.5, "text": "UserComment", "imageURL": "../../../assets/images/background-robot.png"},
-    {"note": 3.5, "text": "UserComment", "imageURL": "../../../assets/images/background-robot.png"}
-  ];
+  public _cartList: any = [];
 
   @Input()
   public set cartList (value: any) {

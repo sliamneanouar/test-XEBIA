@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Global } from '../../globalData/global';
 
 @Component({

@@ -1,6 +1,5 @@
 <div class="saleContent">
-  <ngb-rating [rate]="_note" placement="right" ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-  popoverTitle="Popover on top">
+  <ngb-rating [rate]="_note">
     <ng-template let-fill="fill" let-index="index">
       <span class="star" [class.filled]="fill === 100" [class.bad]="index < _note">&#9733;</span>
     </ng-template>
@@ -19,12 +18,12 @@
     <button *ngIf="!_inCart" type="button" (click)="addBookWithCallBack();"
      class="btn btn-info">
       <i class="fa fa-shopping-cart"></i>
-      Ajouter au panier
+      {{ 'saleSection.addToCart' | translate }}
     </button>
     <button *ngIf="_inCart" type="button" (click)="addBookWithCallBack();"
     class="btn btn-warning">
       <i class="fa fa-shopping-cart"></i>
-      Retirer de panier
+      {{ 'saleSection.removeFromCart' | translate }}
     </button>
   </div>
 </div>

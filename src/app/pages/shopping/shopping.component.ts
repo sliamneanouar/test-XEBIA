@@ -31,8 +31,10 @@ export class ShoppingComponent implements OnInit {
        totalPrice = totalPrice + itemBook.price;
      });
      if(this.totalPrice !== totalPrice) {
+       // var selfGlobal = global;
        this._getDiscount.getDiscount(this.global.getListCarte()).subscribe((data: any) => {
          this._commercialOffers = data;
+         this.global.setCommercialOffers(this._commercialOffers);
                console.log("data ::: ", data);
            },
            error => {

@@ -1,5 +1,5 @@
 <div ngbDropdown class="shopping-content">
-      <button class="cartButton" id="dropdownBasic1" ngbDropdownToggle>
+      <button class="cartButton" id="dropdownBasic1" ngbDropdownToggle [disabled]="global.getListCarte().length === 0">
         <i class="fa fa-shopping-cart icon-shopping">
           <span class="counter-shopping">
             {{ global.getListCarte().length }}
@@ -12,18 +12,8 @@
         [imageURL]="item.cover"
         [text]="item.title">
       </app-sale-detail>
-        <span>
-          Total :
-          <span style="text-decoration: line-through; color: grey;">
-            150
-          </span>
-          <span style="color: red;">
-            - 150
-          </span>
-        </span>
-        <hr>
         <button type="button" class="btn btn-success" [routerLink]="['/shopping']" [disabled]="global.getListCarte().length === 0">
-          Panier
+          {{'cartShopping.cart' | translate}}
         </button>
       </div>
 </div>

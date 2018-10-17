@@ -11,7 +11,7 @@ public languageFlag: string = "France";
 public languageName: string = "FR";
 
   constructor(private translate: TranslateService) {
-      translate.setDefaultLang('en');
+      translate.setDefaultLang('fr');
     }
 
   public updateLanguage(language: string) {

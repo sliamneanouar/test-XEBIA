@@ -11,17 +11,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class ModalComponent  {
   public _titleButton: string = "open";
   public _titleModal: string = "";
-  public _typeModal: string = "signUp";
   public _bookData: any = {};
-
-  @Input()
-    public set typeModal(value: string) {
-        this._typeModal = value;
-    };
-
-    public get typeModal(): string {
-        return this._typeModal;
-    };
 
     @Input()
       public set bookData(value: any) {

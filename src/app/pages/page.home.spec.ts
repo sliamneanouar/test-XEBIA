@@ -14,7 +14,7 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-  // 
+  //
   //
   //
   // beforeEach(() => {

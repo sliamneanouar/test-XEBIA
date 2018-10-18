@@ -1,16 +1,16 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
-import { AppComponent } from './app.component';
+ import { Home } from './page.home';
 import { By } from '@angular/platform-browser';
 describe('AppComponent', () => {
-  let component : AppComponent;
-  let fixture : ComponentFixture<AppComponent>;
+   let component : Home;
+  let fixture : ComponentFixture<Home>;
   let debugElement : DebugElement;
   let htmlElement : HTMLElement;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        Home
       ],
     }).compileComponents();
   }));

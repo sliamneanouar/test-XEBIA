@@ -14,23 +14,24 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
-  //
-  //
-  //
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(AppComponent);
-  //   component = fixture.componentInstance;
-  //   debugElement = fixture.debugElement.query(By.css('p'));
-  //   htmlElement = fixture.debugElement.nativeElement;
-  // });
 
 
-  // it('should render title in a h2 tag', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h2').textContent).toContain('Welcome to app!');
-  // }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(Home);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement.query(By.css('input'));
+    htmlElement = fixture.debugElement.nativeElement;
+  });
+
+
+  it('should render title in a h2 tag', async(() => {
+    console.log('Home ', Home );
+    const fixture = TestBed.createComponent(Home);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('input').textContent).toContain('');
+  }));
   //
   //
   //
